@@ -53,7 +53,11 @@ const login = async (req, res, next) => {
                 status: 'success',
                 code: HttpCode.OK,
                 data: {
-                    user
+                    id: user.id,
+                    email: user.email,
+                    name: user.name,
+                    avatar: user.avatar,
+                    token: user.token
                 }
             })
         }
