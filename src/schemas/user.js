@@ -10,7 +10,7 @@ const userSchema = new Schema({
         type: String,
         minlength: 3,
         maxlength: 25,
-        default: 'No-name'
+        default: 'Guest'
     },
 
     email: {
