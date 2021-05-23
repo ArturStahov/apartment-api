@@ -35,7 +35,6 @@ example request for registration user:
         "email": "test@email.com",
         "name": "test",
         "avatar": "https://s.gravatar.com/avatar/93942e96f5acd83e2e047ad8fe03114d?s=250",
-        "token": "token sdgbjjbndvbsdvsdv234"
     }
 }
 ```

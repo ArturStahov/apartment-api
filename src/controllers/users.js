@@ -26,7 +26,6 @@ const reg = async (req, res, next) => {
 
         const newUser = await serviceUser.create({ name, email, password })
 
-        const userLogin = await serviceAuth.login({ email, password })
 
         return res.status(HttpCode.CREATED).json({
             status: 'success',
@@ -35,8 +34,7 @@ const reg = async (req, res, next) => {
                 id: newUser.id,
                 email: newUser.email,
                 name: newUser.name,
-                avatar: newUser.avatar,
-                token: userLogin.token
+                avatar: newUser.avatar
             }
         })
     } catch (error) {
