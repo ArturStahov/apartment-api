@@ -23,8 +23,10 @@ const reg = async (req, res, next) => {
                 message: 'Email is already use',
             })
         }
+
         const newUser = await serviceUser.create({ name, email, password })
-        const token = await serviceAuth.login({ email, password })
+
+        const userLogin = await serviceAuth.login({ email, password })
 
         return res.status(HttpCode.CREATED).json({
             status: 'success',
@@ -34,7 +36,7 @@ const reg = async (req, res, next) => {
                 email: newUser.email,
                 name: newUser.name,
                 avatar: newUser.avatar,
-                token
+                token: userLogin.token
             }
         })
     } catch (error) {
@@ -47,8 +49,6 @@ const login = async (req, res, next) => {
         const { email, password } = req.body
         const user = await serviceAuth.login({ email, password })
         if (user) {
-
-
             return res.status(HttpCode.OK).json({
                 status: 'success',
                 code: HttpCode.OK,
@@ -61,6 +61,7 @@ const login = async (req, res, next) => {
                 }
             })
         }
+
         throw new ErrorHandler(HttpCode.UNAUTHORIZED, 'Invalid Credential', 'Invalid')
     } catch (error) {
         next(error)
