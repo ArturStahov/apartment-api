@@ -15,13 +15,13 @@ class ApartmentRepository {
     }
 
     async getAll() {
-        const results = await this.model.find({}).toArray()
+        const results = await this.model.find({})
         return results
     }
 
     async getByID(objectId) {
         this._checkId(objectId)
-        const [result] = await this.model.find({ _id: objectId }).toArray()
+        const result = await this.model.findOne({ _id: objectId })
         return result
     }
 
