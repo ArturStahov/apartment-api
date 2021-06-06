@@ -92,10 +92,12 @@ apartment :
 - image --String;
 - rating --String;
 - price --String;
+- city --String; required;
 
 functionality:
 
 - CRUD private collection apartment;
+- public collection;
 - user signup login logout;
 - add user avatar;
 
