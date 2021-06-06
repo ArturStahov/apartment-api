@@ -3,10 +3,10 @@ const { ApartmentService } = require('../services')
 
 const apartmentService = new ApartmentService();
 
+
 const getAll = async (req, res, next) => {
     try {
-        const userId = req.user.id
-        const apartment = await apartmentService.getAll(userId)
+        const apartment = await apartmentService.getAll()
         res.status(HttpCode.OK).json({
             status: 'success',
             code: HttpCode.OK,
@@ -21,8 +21,48 @@ const getAll = async (req, res, next) => {
 
 const getByID = async (req, res, next) => {
     try {
+        const apartment = await apartmentService.getByID(req.params)
+
+        if (apartment) {
+            res.status(HttpCode.OK).json({
+                status: 'success',
+                code: HttpCode.OK,
+                data: {
+                    apartment,
+                }
+            })
+        } else {
+            return next({
+                status: HttpCode.NOT_FOUND,
+                message: "not found!",
+                data: 'not found!'
+            })
+        }
+    } catch (error) {
+        next(error)
+    }
+}
+
+const getAllMy = async (req, res, next) => {
+    try {
         const userId = req.user.id
-        const apartment = await apartmentService.getByID(req.params, userId)
+        const apartment = await apartmentService.getAllMy(userId)
+        res.status(HttpCode.OK).json({
+            status: 'success',
+            code: HttpCode.OK,
+            data: {
+                apartment,
+            }
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
+const getByIDMy = async (req, res, next) => {
+    try {
+        const userId = req.user.id
+        const apartment = await apartmentService.getByIDMy(req.params, userId)
 
         if (apartment) {
             res.status(HttpCode.OK).json({
@@ -136,6 +176,8 @@ const remove = async (req, res, next) => {
 module.exports = {
     getAll,
     getByID,
+    getAllMy,
+    getByIDMy,
     create,
     update,
     patch,

@@ -14,7 +14,18 @@ class ApartmentRepository {
         }
     }
 
-    async getAll(userId) {
+    async getAll() {
+        const results = await this.model.find({}).toArray()
+        return results
+    }
+
+    async getByID(objectId) {
+        this._checkId(objectId)
+        const [result] = await this.model.find({ _id: objectId }).toArray()
+        return result
+    }
+
+    async getAllMy(userId) {
         const results = await this.model.find({ owner: userId }, { "__v": 0 }).populate({
             path: 'owner',
             select: 'name email -_id'
@@ -22,7 +33,7 @@ class ApartmentRepository {
         return results
     }
 
-    async getByID(id, userId) {
+    async getByIDMy(id, userId) {
         this._checkId(id)
         const result = await this.model.findOne({ _id: id, owner: userId }).select("-__v").populate({
             path: 'owner',

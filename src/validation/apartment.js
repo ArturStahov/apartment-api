@@ -13,6 +13,10 @@ const schemaCreate = Joi.object({
     image: Joi.string().optional(),
     rating: Joi.string().optional(),
     price: Joi.string().optional(),
+    city: Joi.string()
+        .min(3)
+        .max(30)
+        .required(),
 
     owner: Joi.string().optional()
 })
@@ -29,6 +33,10 @@ const schemaUpdate = Joi.object({
     image: Joi.string().optional(),
     rating: Joi.string().optional(),
     price: Joi.string().optional(),
+    city: Joi.string()
+        .min(3)
+        .max(30)
+        .optional(),
 
     owner: Joi.string().optional()
 }).min(1);

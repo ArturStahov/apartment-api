@@ -8,13 +8,23 @@ class ApartmentServices {
         }
     }
 
-    async getAll(userId) {
-        const data = await this.repositories.apartment.getAll(userId)
+    async getAll() {
+        const data = await this.repositories.apartment.getAll()
         return data
     }
 
-    async getByID({ id }, userId) {
-        const data = await this.repositories.apartment.getByID(id, userId)
+    async getByIDMy({ id }) {
+        const data = await this.repositories.apartment.getByID(id)
+        return data
+    }
+
+    async getAllMy(userId) {
+        const data = await this.repositories.apartment.getAllMy(userId)
+        return data
+    }
+
+    async getByIDMy({ id }, userId) {
+        const data = await this.repositories.apartment.getByIDMy(id, userId)
         return data
     }
 

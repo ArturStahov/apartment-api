@@ -11,6 +11,7 @@ const apartmentSchema = new Schema({
         required: [true, 'description is required']
     },
 
+
     image: {
         type: String,
         default: ''
@@ -24,6 +25,11 @@ const apartmentSchema = new Schema({
     price: {
         type: String,
         default: '0'
+    },
+
+    city: {
+        type: String,
+        required: [true, 'city is required']
     },
 
     owner: {
