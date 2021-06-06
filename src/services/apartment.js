@@ -13,7 +13,7 @@ class ApartmentServices {
         return data
     }
 
-    async getByIDMy({ id }) {
+    async getByID({ id }) {
         const data = await this.repositories.apartment.getByID(id)
         return data
     }
