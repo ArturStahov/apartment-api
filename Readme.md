@@ -71,10 +71,12 @@ apartment:
 
 - /api/apartment/ 'GET' --get all apartments;
 - /api/apartment/:id 'GET'-- get by id;
+- /api/apartment/my/ 'GET' --get all owner apartments;
+- /api/apartment/my/:id 'GET'-- get by id owner apartment;
 - /api/apartment/ 'POST' -- create apartment;
-- /api/apartment/:id 'PUT' --update apartment by id;
-- /api/apartment/:id 'PATCH' --update apartment by id;
-- /api/apartment/:id 'DELETE' --remove apartment by id;
+- /api/apartment/my/:id 'PUT' --update owner apartment by id;
+- /api/apartment/my/:id 'PATCH' --update owner apartment by id;
+- /api/apartment/my/:id 'DELETE' --remove owner apartment by id;
 
 ## shema:
 
