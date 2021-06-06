@@ -26,10 +26,7 @@ class ApartmentRepository {
     }
 
     async getAllMy(userId) {
-        const results = await this.model.find({ owner: userId }, { "__v": 0 }).populate({
-            path: 'owner',
-            select: 'name email -_id'
-        })
+        const results = await this.model.find({ owner: userId })
         return results
     }
 
