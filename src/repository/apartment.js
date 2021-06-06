@@ -26,7 +26,7 @@ class ApartmentRepository {
     }
 
     async getAllMy(userId) {
-        const results = await this.model.find({ owner: userId })
+        const results = await this.model.find({ owner: userId }).exec()
         return results
     }
 
