@@ -1,5 +1,9 @@
-const { HttpCode } = require('../helpers/constants.js')
-const { ApartmentService } = require('../services')
+const {
+    HttpCode
+} = require('../helpers/constants.js')
+const {
+    ApartmentService
+} = require('../services')
 
 const apartmentService = new ApartmentService();
 
@@ -43,7 +47,7 @@ const getByID = async (req, res, next) => {
     }
 }
 
-const getAllMy = async (req, res, next) => {
+const getAllMyApartment = async (req, res, next) => {
     try {
         const userId = req.user.id
         const apartment = await apartmentService.getAllMy(userId)
@@ -55,6 +59,7 @@ const getAllMy = async (req, res, next) => {
             }
         })
     } catch (error) {
+
         next(error)
     }
 }
@@ -176,7 +181,7 @@ const remove = async (req, res, next) => {
 module.exports = {
     getAll,
     getByID,
-    getAllMy,
+    getAllMyApartment,
     getByIDMy,
     create,
     update,
