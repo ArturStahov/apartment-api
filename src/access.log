@@ -1,0 +1,12 @@
+::1 - - [20/Jun/2021:08:01:26 +0000] "POST /api/users/registration HTTP/1.1" 409 80
+::1 - - [20/Jun/2021:08:05:48 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:08:01 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:10:12 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:10:52 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:15:00 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:15:02 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:15:31 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:15:32 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:15:33 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:15:34 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
+::1 - - [20/Jun/2021:08:15:57 +0000] "GET /api/apartment/my/ HTTP/1.1" 400 77
