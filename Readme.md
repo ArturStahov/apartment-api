@@ -69,14 +69,14 @@ example request for login user:
 
 apartment:
 
-- /api/apartment/ 'GET' --get all apartments;
-- /api/apartment/:id 'GET'-- get by id;
-- /api/apartment/my/ 'GET' --get all owner apartments;
-- /api/apartment/my/:id 'GET'-- get by id owner apartment;
+- /api/apartment/all/ 'GET' --get all apartments;
+- /api/apartment/all/:id 'GET'-- get by id;
+- /api/apartment/myaprtment/ 'GET' --get all owner apartments;
+- /api/apartment/myaprtment/:id 'GET'-- get by id owner apartment;
 - /api/apartment/ 'POST' -- create apartment;
-- /api/apartment/my/:id 'PUT' --update owner apartment by id;
-- /api/apartment/my/:id 'PATCH' --update owner apartment by id;
-- /api/apartment/my/:id 'DELETE' --remove owner apartment by id;
+- /api/apartment/myaprtment/:id 'PUT' --update owner apartment by id;
+- /api/apartment/myaprtment/:id 'PATCH' --update owner apartment by id;
+- /api/apartment/myaprtment/:id 'DELETE' --remove owner apartment by id;
 
 ## shema:
 

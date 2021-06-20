@@ -5,8 +5,8 @@ const { validateCreateApartment, validateUpdateApartment } = require('../../vali
 const guard = require('../../helpers/guard')
 
 
-router.get('/all/', guard, controllersApartment.getAll)
-router.get('/all/:id', guard, controllersApartment.getByID)
+router.get('/all/',guard, controllersApartment.getAll)
+router.get('/all/:id',guard, controllersApartment.getByID)
 router.post('/myapartment/', guard, validateCreateApartment, controllersApartment.create)
 router.get('/myapartment/', guard, controllersApartment.getAllMyApartment)
 router.get('/myaprtment/:id', guard, controllersApartment.getByIDMy)
