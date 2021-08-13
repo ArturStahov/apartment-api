@@ -9,6 +9,7 @@ require('dotenv').config()
 const { HttpCode } = require('./helpers/constants.js')
 const routerApartment = require('./api/apartment')
 const routerUsers = require('./api/users')
+const routerComment=require('./api/comment')
 const { ErrorHandler } = require('./helpers/errorHandler')
 const app = express()
 
@@ -37,6 +38,7 @@ app.use(express.json({ limit: 10000 }))
 app.use('/api/', limiter)
 app.use('/api/apartment', routerApartment)
 app.use('/api/users', routerUsers)
+app.use('/api/comment', routerComment)
 
 //error 404
 app.use((req, res, next) => {

@@ -1,12 +1,7 @@
-const {
-    HttpCode
-} = require('../helpers/constants.js')
-const {
-    ApartmentService
-} = require('../services')
+const {HttpCode} = require('../helpers/constants.js')
+const {ApartmentService} = require('../services')
 
 const apartmentService = new ApartmentService();
-
 
 const getAll = async (req, res, next) => {
     try {
