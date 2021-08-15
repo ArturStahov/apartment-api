@@ -7,7 +7,7 @@ const commentService = new CommentService();
 const getAllComment = async (req, res, next) => {
     try {
         const projectId=req.params;
-        const comments = await apartmentService.getComment(projectId)
+        const comments = await commentService.getComment(projectId)
         res.status(HttpCode.OK).json({
             status: 'success',
             code: HttpCode.OK,

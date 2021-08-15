@@ -16,7 +16,7 @@ class CommentRepository {
   
     async getComment(projectId) {
         this._checkId(projectId)
-        const results = await this.model.find({ projectId }).exec()
+        const results = await this.model.find({ projectId: projectId }).exec()
         return results
     }
 
