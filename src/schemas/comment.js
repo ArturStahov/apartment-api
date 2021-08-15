@@ -30,8 +30,7 @@ const commentSchema = new Schema({
     }
 },
     {
-        timestamps: true,
-        typeKey: '$type' 
+        timestamps: true       
     }
 );
 
