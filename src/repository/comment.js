@@ -7,8 +7,15 @@ class CommentRepository {
     constructor() {
         this.model = CommentShema
     }
-  
+
+    _checkId(id) {
+        if (!ObjectId.isValid(id)) {
+            throw new ErrorHandler(HttpCode.BAD_REQUEST, `id: not valid!`, "Bad Request")
+        }
+    }
+
     async getComment(projectId) {
+        this._checkId(projectId)
         const results = await this.model.find({ projectId: projectId }).exec()
         return results
     }

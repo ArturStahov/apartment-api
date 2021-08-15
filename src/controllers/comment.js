@@ -6,7 +6,7 @@ const commentService = new CommentService();
 
 const getAllComment = async (req, res, next) => {
     try {
-        const projectId=req.params;
+        const projectId=req.params.id;
         const comments = await commentService.getComment(projectId)
         res.status(HttpCode.OK).json({
             status: 'success',
