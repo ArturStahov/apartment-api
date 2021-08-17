@@ -12,6 +12,7 @@ const schemaCreate = Joi.object({
         .required(),
     image: Joi.string().optional(),
     rating: Joi.string().optional(),
+    ratingCounter:Joi.string().optional(),
     price: Joi.string().optional(),
     city: Joi.string()
         .min(3)
@@ -32,6 +33,7 @@ const schemaUpdate = Joi.object({
         .required(),
     image: Joi.string().optional(),
     rating: Joi.string().optional(),
+    ratingCounter:Joi.string().optional(),
     price: Joi.string().optional(),
     city: Joi.string()
         .min(3)

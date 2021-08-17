@@ -102,10 +102,10 @@ const create = async (req, res, next) => {
 
 const update = async (req, res, next) => {
     try {
-        const userId = req.user.id
+        const userId = req.user.id//not need for update rating, maybe need add new method for update by only if this item is some user item
         const apartment = await apartmentService.update(req.params, req.body, userId)
 
-        if (note) {
+        if (apartment) {
             res.status(HttpCode.OK).json({
                 status: 'success',
                 code: HttpCode.OK,

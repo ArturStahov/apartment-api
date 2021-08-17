@@ -46,7 +46,7 @@ class ApartmentRepository {
 
     async update(id, body, userId) {
         this._checkId(id)
-        const result = await this.model.findByIdAndUpdate({ _id: id, owner: userId }, { ...body }, { new: true }).select("-__v")
+        const result = await this.model.findByIdAndUpdate({ _id: id }, { ...body }, { new: true }).select("-__v")
         return result
     }
 

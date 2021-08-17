@@ -22,6 +22,11 @@ const apartmentSchema = new Schema({
         default: '0'
     },
 
+    ratingCounter:{
+        type: String,
+        default: '0'
+    },
+
     price: {
         type: String,
         default: '0'
