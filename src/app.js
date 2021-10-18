@@ -12,6 +12,7 @@ const routerUsers = require('./api/users')
 const routerComment=require('./api/comment')
 const { ErrorHandler } = require('./helpers/errorHandler')
 const app = express()
+const expressWs = require('express-ws')(app);  
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"), { flags: "a" })
 const AVATARS_DIR = process.env.AVATARS_DIR
@@ -23,7 +24,7 @@ const limiter = rateLimit({
         next(new ErrorHandler(HttpCode.BAD_REQUEST, 'Error limit query!', 'limit query!'))
     }
 });
-
+ 
 app.use(express.static(path.join(process.cwd(), AVATARS_DIR)))
 app.use(logger('dev'))
 app.use(logger("common", {
@@ -39,6 +40,21 @@ app.use('/api/', limiter)
 app.use('/api/apartment', routerApartment)
 app.use('/api/users', routerUsers)
 app.use('/api/comment', routerComment)
+
+//socket functional
+app.ws('/chat', function(ws, req) {
+    ws.on('message', function(msg) {
+      broadcast(msg)
+    });
+  });
+
+function broadcast(data){
+    expressWs.getWss().clients.forEach((client)=>{
+        if(client.readyState==1){
+            client.send(data)
+        }
+    })
+}
 
 //error 404
 app.use((req, res, next) => {

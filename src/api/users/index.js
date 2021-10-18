@@ -6,6 +6,7 @@ const upload = require('../../helpers/upload')
 const { validateCreateUser, validateUploadAvatar } = require('../../validation/users.js')
 const accountLimiter = require('../../helpers/accountLimiter')
 
+
 router.post('/registration', accountLimiter, validateCreateUser, controllersUsers.reg)
 router.post('/login', controllersUsers.login)
 router.post('/logout', guard, controllersUsers.logout)
