@@ -48,3 +48,6 @@
 ::1 - - [20/Jun/2021:09:27:49 +0000] "GET /api/apartment/myaprtmentsdevsdvsdvsdvsdvsdvsdvsdvsdv HTTP/1.1" 400 77
 ::1 - - [20/Jun/2021:09:27:50 +0000] "GET /api/apartment/myaprtmentsdevsdvsdvsdvsdvsdvsdvsdvsdv HTTP/1.1" 400 77
 ::1 - - [20/Jun/2021:09:28:51 +0000] "GET /api/apartment/myaprtmentsdevsdvsdvsdvsdvsdvsdvsdvsdv HTTP/1.1" 400 77
+::1 - - [16/Jan/2022:09:49:43 +0000] "GET /api/config HTTP/1.1" 500 112
+::1 - - [16/Jan/2022:09:50:15 +0000] "GET /api/config/ HTTP/1.1" 500 112
+::1 - - [16/Jan/2022:09:51:04 +0000] "GET /api/config/ HTTP/1.1" 500 112

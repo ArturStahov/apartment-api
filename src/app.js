@@ -10,6 +10,7 @@ const { HttpCode } = require('./helpers/constants.js')
 const routerApartment = require('./api/apartment')
 const routerUsers = require('./api/users')
 const routerComment=require('./api/comment')
+const routerConfig=require('./api/config')
 const { ErrorHandler } = require('./helpers/errorHandler')
 const app = express()
 const expressWs = require('express-ws')(app);  
@@ -40,6 +41,7 @@ app.use('/api/', limiter)
 app.use('/api/apartment', routerApartment)
 app.use('/api/users', routerUsers)
 app.use('/api/comment', routerComment)
+app.use('/api/config', routerConfig)
 
 //socket functional
 app.ws('/chat', function(ws, req) {
